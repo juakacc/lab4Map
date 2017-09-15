@@ -1,5 +1,6 @@
-package lab3_Joaquim_Patrick;
+package lab4_Joaquim_Patrick;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Filme {
@@ -60,10 +61,18 @@ public class Filme {
 				+ ", getAno()=" + getAno() + "]";
 	}
 
-
-	public boolean isFuncionario(Funcionario f) {
-		// TODO Auto-generated method stub
-		return false;
+	public List<String> getFuncao(Funcionario f) {
+		List<String> funcoes = new ArrayList<>();
+		if (diretor.equals(new Diretor(f))) {
+			funcoes.add("Diretor");
+		}
+		if (roteirista.equals(new Roteirista(f))) {
+			funcoes.add("Roteirista");
+		}
+		if (elenco.contains(new Ator(f))) {
+			funcoes.add("Ator");
+		}
+		return funcoes;
 	}
 	
 }
