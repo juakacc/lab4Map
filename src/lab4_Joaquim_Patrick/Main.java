@@ -6,33 +6,57 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		Filmografia f = new  Filmografia();
+		Filmografia filmes = new  Filmografia();
 		
-		Funcionario joaquim = new Funcionario("Joaquim");
+		Funcionario jackie = new Funcionario("Jackie Chan");
 		Funcionario alfredo = new Funcionario("Alfredo");
 		Funcionario marcio = new Funcionario("Marcio");
+		Funcionario joao = new Funcionario("João");
+		Funcionario maria = new Funcionario("Maria");
+		Funcionario mara = new Funcionario("Mara");
+		Funcionario tati = new Funcionario("Tati");
 		
-		Diretor diretor = new Diretor(joaquim);
-		Roteirista roteirista = new Roteirista(joaquim);
+		
 		List<Ator> elenco = new ArrayList<>();
-		Ator ator1 = new Ator(joaquim);
-		elenco.add(ator1);
+		elenco.add(new Ator(jackie));
 		elenco.add(new Ator(alfredo));
 		elenco.add(new Ator(marcio));
-		
+		elenco.add(new Ator(maria));
+		elenco.add(new Ator(tati));
 		
 		List<Musica> trilhaSonora = new ArrayList<>();
 		trilhaSonora.add(new Musica("Bawitaba"));
 		trilhaSonora.add(new Musica("The Barracuda"));
-		int ano = 2017;
 		
-		Filme filme = new Filme("Velozes e Furiosos", diretor, roteirista, elenco, trilhaSonora, ano);
+		Filme vf = new Filme("Velozes e Furiosos", new Diretor(jackie), new Roteirista(alfredo), new Cinegrafista(tati), elenco, trilhaSonora, 2017);
 		
+		elenco.add(new Ator(mara));
+		trilhaSonora.clear();
+		trilhaSonora.add(new Musica("Angered Rhinos"));
+		trilhaSonora.add(new Musica("Dodos"));
+		trilhaSonora.add(new Musica("Baby Walks"));
 		
-		f.addFilme(filme);
+		Filme aEraDoGelo = new Filme("A era do gelo", new Diretor(marcio), new Roteirista(maria), new Cinegrafista(mara), elenco, trilhaSonora, 2000);
 		
-		System.out.println(joaquim.getFilmografia());
+		elenco.add(new Ator(joao));
+		
+		trilhaSonora.clear();
+		trilhaSonora.add(new Musica("Say"));
+		trilhaSonora.add(new Musica("Full of Joy"));
+		
+		Filme karateKid = new Filme("Karatê Kid", new Diretor(jackie), new Roteirista(marcio), new Cinegrafista(mara), elenco, trilhaSonora, 2010);
+		
+		filmes.addFilme(vf);
+		filmes.addFilme(aEraDoGelo);
+		filmes.addFilme(karateKid);
+		
+		System.out.println(jackie.getFilmografia());
 		System.out.println(marcio.getFilmografia());
+		System.out.println(mara.getFilmografia());
 		
+		System.out.println(vf);
+		System.out.println(aEraDoGelo);
+		System.out.println(karateKid);
+
 	}
 }

@@ -4,6 +4,8 @@ public class Ator {
 	
 	private Funcionario f;
 	
+	// Mais algum atributo particular...
+	
 	public Ator (Funcionario f) {
 		this.f = f;
 	}
@@ -28,4 +30,13 @@ public class Ator {
 	public Funcionario getF() {
 		return f;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(f);
+		return builder.toString();
+	}
+	
+	
 }

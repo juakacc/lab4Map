@@ -35,5 +35,14 @@ public class Diretor {
 	public Funcionario getF() {
 		return f;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(f);
+		return builder.toString();
+	}
+	
+	
 	
 }
